@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+.header {
+  min-height: 3.3125rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__logo {
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.2s ease;
+      transform: scale(1.1);
+    }
+
+    & path {
+      fill: $primary-clr;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem;
+
+    &-link {
+      cursor: pointer;
+      pointer-events: auto;
+
+      & > svg {
+        width: 1.85rem;
+        height: 1.85rem;
+        fill: $icon-clr;
+
+        &:hover {
+          fill: white;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

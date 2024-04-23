@@ -1,0 +1,13 @@
+//im using css variables in scss so i can change them via JS later
+:root {
+  --gradient-1: #43cea2;
+  --gradient-2: #185a9d;
+}
+
+$bgc: #1d1d20;
+$gradient-1: var(--gradient-1);
+$gradient-2: var(--gradient-2);
+$primary-clr: #d1d1d1;
+$icon-clr: #777;
+
+$border-width: 1.3rem;

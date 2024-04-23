@@ -1,0 +1,74 @@
+@use "variables" as *;
+
+.main {
+  position: relative;
+  flex: 1;
+
+  height: 100vh;
+  max-height: 791px;
+
+  @media (height < 791px) and (width < 900px) {
+    height: auto;
+  }
+
+  &__container {
+    position: relative;
+    padding: $border-width;
+    transition: 1s ease;
+  }
+}
+
+// gradient borders
+.main__container:before,
+.main__container:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: $border-width solid #0000;
+  border-image: linear-gradient(
+      -45deg,
+      $gradient-1 5%,
+      $gradient-2 16%,
+      #f5f5f500 0 84%,
+      $gradient-2 0,
+      $gradient-1 95%
+    )
+    20;
+}
+
+.inner__container {
+  display: flex;
+  flex-direction: column;
+
+  user-select: none;
+  padding: 1.8rem;
+}
+
+@media screen and (max-width: 31.25em) {
+  .main__container:before,
+  .main__container:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+
+    border: calc($border-width/2.3) solid #0000;
+    border-image: linear-gradient(
+        -45deg,
+        #f5f5f500 0 92%,
+        $gradient-2 0,
+        $gradient-1 100%
+      )
+      0.5;
+  }
+  .inner__container {
+    padding: 1.4rem;
+  }
+}
