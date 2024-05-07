@@ -7,8 +7,8 @@
   height: 100vh;
   max-height: 791px;
 
-  @media (height < 791px) and (width < 900px) {
-    height: auto;
+  @media (height < 65em) and (width < 65em) {
+    height: fit-content;
   }
 
   &__container {

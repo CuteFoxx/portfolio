@@ -177,6 +177,7 @@
   }
   .projects {
     flex: 0 0 fit-content;
+    align-self: flex-start;
   }
   .project__title {
     margin-top: 3.6rem;
@@ -188,7 +189,7 @@
   }
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 46.875em) {
   .project__title {
     font-weight: bold;
     font-size: 1.25rem;
