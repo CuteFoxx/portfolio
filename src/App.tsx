@@ -1,8 +1,12 @@
+import Header from "./components/Header";
+import Intro from "./components/Intro";
+
 function App() {
   return (
-    <>
-      <h2 className="text-red-500">Hello</h2>
-    </>
+    <div className="container font-primary">
+      <Header />
+      <Intro />
+    </div>
   );
 }
 
