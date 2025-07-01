@@ -6,7 +6,7 @@ const Intro = () => {
       <div className="flex flex-col gap-2">
         <div className="flex sm:justify-between gap-1">
           <Word>Full-stack</Word>
-          <Link className="hidden lg:block" href="#projects">
+          <Link className="hidden lg:flex" href="#projects">
             Projects
           </Link>
         </div>
@@ -19,7 +19,7 @@ const Intro = () => {
         </div>
       </div>
       <Description className="block lg:hidden mt-8" />
-      <Link className="block lg:hidden mt-4" href="#projects">
+      <Link className="flex lg:hidden mt-4" href="#projects">
         Projects
       </Link>
     </div>
