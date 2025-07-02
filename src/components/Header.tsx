@@ -6,7 +6,7 @@ function Header() {
   const [open, setIsOpen] = useState(false);
 
   return (
-    <div className="font-secondary md:text-2xl py-3 mb-12 md:py-6 flex items-center justify-between lg:py-12 relative bg-background z-10">
+    <div className="font-secondary md:text-2xl py-3 mb-12 lg:mb-40 md:py-6 flex items-center justify-between lg:py-12 relative bg-background z-10">
       <h1>Alisa Polishchuk</h1>
       <nav>
         <ul
@@ -15,13 +15,13 @@ function Header() {
           }`}
         >
           <li>
-            <a href="">About</a>
+            <HeaderLink href="#">About</HeaderLink>
           </li>
           <li>
-            <a href="">Projects</a>
+            <HeaderLink href="#">Projects</HeaderLink>
           </li>
           <li>
-            <a href="">Contacts</a>
+            <HeaderLink href="#">Contacts</HeaderLink>
           </li>
         </ul>
       </nav>
@@ -36,3 +36,20 @@ function Header() {
 }
 
 export default Header;
+
+function HeaderLink({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) {
+  return (
+    <a
+      className="relative before:height-[2px] before:content-[''] before:w-full before:block before:bg-white before:absolute before:bottom-0 before:h-0.5 before:transition-all before:duration-500 before:scale-x-0 hover:before:scale-x-100 before:origin-bottom-left"
+      href={href}
+    >
+      {children}
+    </a>
+  );
+}

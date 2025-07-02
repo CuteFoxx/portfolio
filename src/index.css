@@ -22,8 +22,11 @@
   --font-secondary: "FiraCode", sans-serif;
 }
 
+html {
+  @apply overflow-x-hidden scroll-smooth;
+}
 body {
-  @apply bg-background text-font;
+  @apply bg-background text-font overflow-clip;
 }
 
 .container {
