@@ -63,12 +63,13 @@ const Word = ({ children }: { children: React.ReactNode }) => {
 
 const Description = ({ className }: { className: string }) => {
   return (
-    <p className={`lg:max-w-80  text-primary ${className}`}>
-      I like to explore new things and topics i can learn.
+    <p className={`lg:max-w-120 lg:text-xl  text-primary ${className}`}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
       <span className="italic text-font">
         {" "}
-        And i do like development process in general
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </span>
+      Vero nobis iure ipsum iusto, autem mollitia!
     </p>
   );
 };

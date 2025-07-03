@@ -26,9 +26,21 @@ html {
   @apply overflow-x-hidden scroll-smooth;
 }
 body {
-  @apply bg-background text-font overflow-clip;
+  @apply bg-background text-font overflow-clip pb-6;
+}
+
+.section {
+  @apply scroll-m-6 scroll-p-6 lg:scroll-m-12 lg:scroll-p-12;
 }
 
 .container {
   @apply max-w-[105rem] px-6 md:px-8 xl:px-40 mx-auto;
+}
+
+.circle {
+  @apply before:content-[''] before:block before:border-[0.5px] before:rounded-full  before:right-0 before:top-0 before:absolute before:opacity-30 before:pointer-events-none before:-z-[1];
+}
+
+.section-title {
+  @apply before:content-['...'] after:content-['...'] flex gap-1 font-secondary font-[500] text-xs;
 }
