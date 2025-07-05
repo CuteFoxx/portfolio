@@ -23,10 +23,26 @@ const About = () => {
             src="/imgs/portrait.jpg"
           ></img>
         </div>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-4 lg:gap-6">
           <TechStack title="Front-end">
             <BasicLink href="https://tailwindcss.com/">Tailwind</BasicLink>
             <BasicLink href="https://react.dev/">React</BasicLink>
+            <BasicLink href="https://vite.dev/">Vite</BasicLink>
+            <BasicLink href="https://www.typescriptlang.org/">
+              TypeScript
+            </BasicLink>
+            <BasicLink href="https://sass-lang.com/">Saas</BasicLink>
+            <BasicLink href="https://ui.shadcn.com/">Shadcn</BasicLink>
+            <BasicLink href="https://gsap.com/">GSAP</BasicLink>
+          </TechStack>
+
+          <TechStack className="lg:w-2/3" title="Back-end">
+            <BasicLink href="https://nodejs.org">NodeJS</BasicLink>
+            <BasicLink href="https://www.mongodb.com/">MongoDB</BasicLink>
+            <BasicLink href="https://www.php.net/">PHP</BasicLink>
+            <BasicLink href="https://symfony.com/">Symfony</BasicLink>
+            <BasicLink href="https://www.mysql.com/">MySQL</BasicLink>
+            <BasicLink href="https://sqlite.org/">SQLlite</BasicLink>
           </TechStack>
         </div>
       </div>

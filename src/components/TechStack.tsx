@@ -1,12 +1,18 @@
-const TechStack = ({
-  title,
-  children,
-}: {
+import type { HTMLAttributes } from "react";
+
+type TechStackProps = {
   title: string;
   children: React.ReactNode;
-}) => {
+} & HTMLAttributes<HTMLDivElement>;
+
+const TechStack = ({ title, children, ...props }: TechStackProps) => {
+  const { className, ...rest } = { ...props };
+
   return (
-    <div className="rounded-3xl overflow-hidden border-[0.5px] border-white/50 p-6 font-secondary hover:bg-white transition-all duration-500 group bg-background">
+    <div
+      className={`rounded-3xl overflow-hidden border-[0.5px] border-white/50 p-6 font-secondary hover:bg-white transition-all duration-500 group bg-background ${className}`}
+      {...rest}
+    >
       <h2 className="text-lg mb-3 group-hover:text-background transition-all duration-500">
         {title}
       </h2>

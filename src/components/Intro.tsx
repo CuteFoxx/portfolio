@@ -2,7 +2,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Link from "./Link";
 import SocialLink from "./SocialLink";
 import { PiGithubLogoFill } from "react-icons/pi";
-import { FaArrowDownLong } from "react-icons/fa6";
 
 const Intro = ({ ...rest }) => {
   return (
