@@ -1,11 +1,12 @@
 import BasicLink from "./BasicLink";
 import TechStack from "./TechStack";
 
-const About = () => {
+const About = ({ className = "", ...rest }) => {
   return (
     <div
       id="about"
-      className="section relative circle before:w-[40rem] before:h-[40rem] before:right-0 before:translate-x-[60%] min-h-[90vh]"
+      className={`section relative circle before:w-[40rem] before:h-[40rem] before:right-0 before:translate-x-[60%] min-h-[90vh] lg:min-h-max ${className}`}
+      {...rest}
     >
       <div>
         <h2 className="section-title">/About_me</h2>

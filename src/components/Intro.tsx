@@ -3,11 +3,11 @@ import Link from "./Link";
 import SocialLink from "./SocialLink";
 import { PiGithubLogoFill } from "react-icons/pi";
 
-const Intro = ({ ...rest }) => {
+const Intro = ({ className = "", ...rest }) => {
   return (
     <div
       id="intro"
-      className="min-h-full relative lg:pb-20 overflow-hidden"
+      className={`min-h-full relative lg:pb-20 overflow-hidden ${className}`}
       {...rest}
     >
       <div>

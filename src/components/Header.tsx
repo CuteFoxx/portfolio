@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <div
-      className={`font-secondary md:text-2xl py-3 mb-12 lg:mb-40 md:py-6 flex items-center justify-between lg:py-12 relative bg-background z-10 circle before:w-[20rem] before:h-[20rem] before:-z-10 before:translate-x-[60%] before:-translate-y-1/2 xl:before:!-right-30 xl:before:-translate-y-[20%] after:absolute after:-left-6 after:-z-[2] after:w-screen after:h-full after:transition-all after:duration-500 ${
+      className={`font-secondary md:text-2xl py-3 mb-12 lg:mb-40 md:py-6 flex items-center justify-between lg:py-12 relative bg-background z-10 circle before:w-[20rem] before:h-[20rem] before:-z-10 before:translate-x-[60%] before:-translate-y-1/2 xl:before:!-right-30 xl:before:-translate-y-[20%] after:absolute after:-left-6 after:-z-[1] after:w-screen after:h-full after:transition-all after:duration-500 ${
         open ? "after:bg-background" : ""
       }`}
     >

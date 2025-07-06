@@ -44,3 +44,7 @@ body {
 .section-title {
   @apply before:content-['...'] after:content-['...'] flex gap-1 font-secondary font-[500] text-xs;
 }
+
+.section-title-secondary {
+  @apply relative font-secondary text-5xl w-full text-right py-2  font-[600] before:bg-font/10 before:content-[''] before:w-[200vw] before:h-0.5 before:block before:top-[100%] before:absolute before:-left-[50vw];
+}
