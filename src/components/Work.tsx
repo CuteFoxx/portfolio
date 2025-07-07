@@ -9,7 +9,7 @@ const Work = ({ className = "", ...rest }) => {
       <div>
         <Experience
           companyName="Glyanec"
-          jobTitle="Full-stack"
+          jobTitle="Full-stack developer"
           techStack="JavaScript & PHP"
           startDate={new Date("2024-06-11")}
         />

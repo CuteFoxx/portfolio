@@ -12,11 +12,11 @@ const Experience = ({
   endDate?: Date;
 }) => {
   return (
-    <section className="py-2 md:py-4 relative flex gap-12 md:gap-20 font-secondar hover:text-background transition-all duration-400 before:h-full before:w-[200vw] before:block before:content-[''] before:-left-[50vw] before:transition-all hover:before:bg-font before:absolute before:-z-10 before:top-0 before:duration-400 group ">
+    <section className="py-4 md:py-4 relative flex gap-12 md:gap-20 font-secondar hover:text-background transition-all duration-400 before:h-full before:w-[200vw] before:block before:content-[''] before:-left-[50vw] before:transition-all hover:before:bg-font before:absolute before:-z-10 before:top-0 before:duration-400 group font-secondary">
       <Duration startDate={startDate} endDate={endDate} />
       <div className="text-sm md:text-xl flex flex-col gap-2 md:flex-row md:items-center  justify-between  md:grow">
         <h3>{companyName}</h3>
-        <div className="flex flex-col md:flex-row text-xs md:gap-1 md:text-xl">
+        <div className="flex flex-col md:flex-row text-xs md:gap-1 md:text-md lg:text-xl">
           <span>{`${jobTitle ?? ""} | `}</span>
           <span>{`${techStack ?? ""}`}</span>
         </div>
