@@ -1,26 +1,34 @@
 import Gallery from "./Gallery";
-import LinkImage from "./LinkImage";
+import type { ProjectType } from "../types/Project";
+import { cva, type VariantProps } from "class-variance-authority";
 
-const Project = () => {
+const galleryVarians = cva(
+  "relative [&>*]:max-h-[300px] [&>*]:flex flex flex-wrap gap-5 gallery",
+  {
+    variants: {
+      intent: {
+        // I feel sorry about this, to be honest, but at the time I didn’t have any other ideas.
+        primary: [
+          "primary [&>*:nth-child(2)]:!overflow-visible [&>*:nth-child(2)]:absolute [&>*:nth-child(2)]:z-10 [&>*:nth-child(2)]:max-h-[150px]  [&>*:nth-child(1)]:w-full   [&>*:nth-child(2)]:aspect-[1] [&>*:nth-child(2)]:top-[150px] [&>*:nth-child(2)]:-right-0.5 [&>*:nth-child(2)]:outline-[20px]  [&>*:nth-child(2)]:outline-background [&>*:nth-child(2)]:rounded-4xl",
+        ],
+        secondary: ["test"],
+        ternary: ["test2"],
+      },
+    },
+  }
+);
+
+type ProjectProps = {
+  project: ProjectType;
+} & VariantProps<typeof galleryVarians>;
+
+const Project = ({ project, intent }: ProjectProps) => {
   return (
     <div>
-      <Gallery intent="primary">
-        <LinkImage
-          href="https://music.youtube.com/watch?v=9AHLjHsM57I"
-          imgSrc="https://images.unsplash.com/photo-1743508453815-8dd6348ee094?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="landscape"
-        />
-        <LinkImage
-          href="https://music.youtube.com/watch?v=9AHLjHsM57I"
-          imgSrc="https://images.unsplash.com/photo-1751220418652-1c10d9616227?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="landscape"
-        />
-        <LinkImage
-          href="https://music.youtube.com/watch?v=9AHLjHsM57I"
-          imgSrc="https://images.unsplash.com/photo-1750247612191-61b3627be867?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="landscape"
-        />
-      </Gallery>
+      <Gallery
+        project={project}
+        className={galleryVarians({ intent: intent })}
+      />
     </div>
   );
 };

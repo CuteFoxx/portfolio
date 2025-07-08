@@ -22,6 +22,17 @@
   --font-secondary: "FiraCode", sans-serif;
 }
 
+@layer components {
+  .gallery img,
+  video {
+    @apply rounded-4xl !h-auto;
+  }
+
+  .gallery.primary {
+    @apply hidden;
+  }
+}
+
 html {
   @apply overflow-x-hidden scroll-smooth;
 }

@@ -1,27 +1,24 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import type { ProjectType, GalleryType } from "../types/Project";
+import LinkImage from "./LinkImage";
 
-const galleryVarians = cva("gallery-item", {
-  variants: {
-    intent: {
-      primary: ["[&>*:nth-child(1)]:w-full"],
-      secondary: ["test"],
-    },
-  },
-});
-
-interface galleryProps extends VariantProps<typeof galleryVarians> {
-  children: React.ReactElement[];
-}
-
-const Gallery = ({ children, intent, ...props }: galleryProps) => {
+const Gallery = ({
+  project,
+  className,
+}: {
+  project: ProjectType;
+  className?: string;
+}) => {
   return (
-    <section
-      className={`[&>*]:rounded-4xl [&>*]:max-h-[300px] [&>*:nth-child(n+4)]:hidden ${galleryVarians(
-        { intent }
-      )}`}
-      {...props}
-    >
-      {children}
+    <section className={className}>
+      {project.gallery.map((gallery: GalleryType) => {
+        return (
+          <LinkImage
+            href={project.projectLinks[0]}
+            imgSrc={gallery.img}
+            alt={gallery.alt}
+          />
+        );
+      })}
     </section>
   );
 };
