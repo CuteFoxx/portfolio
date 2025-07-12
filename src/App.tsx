@@ -6,11 +6,11 @@ import Work from "./components/Work";
 
 function App() {
   return (
-    <div className="container font-primary min-h-screen flex flex-col">
+    <div className="font-primary container flex min-h-screen flex-col">
       <Header />
       <Intro
         className={
-          "flex-1 basis-[90vh] max-h-[500px] lg:max-h-[75vh] lg:basis-[81vh]"
+          "max-h-[500px] flex-1 basis-[90vh] lg:max-h-[75vh] lg:basis-[81vh]"
         }
       />
       <About className="mb-20 lg:mb-60" />

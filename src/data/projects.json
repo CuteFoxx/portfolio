@@ -4,6 +4,9 @@
     "projectLinks": [
       "https://music.youtube.com/watch?v=A3pu7gSHiKI&si=7IRnFj44g6xqcyju"
     ],
+    "techStack": ["TypeScript", "React", "NodeJS"],
+    "description": "**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Donec et diam quis lorem egestas ornare. Nunc in nibh sit amet nisi volutpat congue. Duis id eros sit amet dolor vestibulum vulputate at a enim. Donec nec laoreet libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "sourceCode": "https://github.com/",
     "gallery": [
       {
         "img": "https://images.unsplash.com/photo-1751335412320-14cbef56564e?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -15,6 +18,29 @@
       },
       {
         "img": "https://images.unsplash.com/photo-1734983235410-cbbc5f5fcdaf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD",
+        "alt": "image-3"
+      }
+    ]
+  },
+  {
+    "name": "project2",
+    "projectLinks": [
+      "https://music.youtube.com/watch?v=A3pu7gSHiKI&si=7IRnFj44g6xqcyju"
+    ],
+    "techStack": ["TypeScript", "React", "NodeJS"],
+    "description": "**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Donec et diam quis lorem egestas ornare. Nunc in nibh sit amet nisi volutpat congue. Duis id eros sit amet dolor vestibulum vulputate at a enim. Donec nec laoreet libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "sourceCode": "https://github.com/",
+    "gallery": [
+      {
+        "img": "https://images.unsplash.com/photo-1518915097488-7accba4ed445?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "image-1"
+      },
+      {
+        "img": "https://images.unsplash.com/photo-1751647670943-74e2045c942a?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "image-2"
+      },
+      {
+        "img": "https://images.unsplash.com/photo-1747227825543-5da2c9f03222?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "alt": "image-3"
       }
     ]

@@ -5,21 +5,21 @@ const About = ({ className = "", ...rest }) => {
   return (
     <div
       id="about"
-      className={`section relative circle before:w-[40rem] before:h-[40rem] before:right-0 before:translate-x-[60%] min-h-[90vh] lg:min-h-max ${className}`}
+      className={`section circle relative min-h-[90vh] before:right-0 before:h-[40rem] before:w-[40rem] before:translate-x-[60%] lg:min-h-max ${className}`}
       {...rest}
     >
       <div>
         <h2 className="section-title">/About_me</h2>
-        <p className="text-primary text-lg mt-6">
+        <p className="text-primary mt-6 text-lg">
           Hello! I'm Alisa, I'm a{" "}
           <span className="text-font italic">full-stack developer</span>
         </p>
       </div>
 
-      <div className="lg:grid lg:gap-30 xl:gap-50 lg:grid-cols-[7fr_4fr]">
-        <div className="rounded-3xl overflow-hidden w-full mt-6 grayscale-100 lg:order-2 ">
+      <div className="lg:grid lg:grid-cols-[7fr_4fr] lg:gap-30 xl:gap-50">
+        <div className="mt-6 w-full overflow-hidden rounded-3xl grayscale-100 lg:order-2">
           <img
-            className="object-cover w-full max-h-80 select-none"
+            className="max-h-80 w-full object-cover select-none"
             draggable={false}
             src="/imgs/portrait.jpg"
           ></img>

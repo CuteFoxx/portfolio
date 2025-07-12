@@ -25,11 +25,7 @@
 @layer components {
   .gallery img,
   video {
-    @apply rounded-4xl !h-auto;
-  }
-
-  .gallery.primary {
-    @apply hidden;
+    @apply !h-auto rounded-4xl;
   }
 }
 
@@ -40,22 +36,26 @@ body {
   @apply bg-background text-font overflow-clip pb-6;
 }
 
+body p strong {
+  @apply text-font font-[400];
+}
+
 .section {
   @apply scroll-m-6 scroll-p-6 lg:scroll-m-12 lg:scroll-p-12;
 }
 
 .container {
-  @apply max-w-[105rem] px-6 md:px-8 xl:px-40 mx-auto;
+  @apply mx-auto max-w-[105rem] px-6 md:px-8 xl:px-40;
 }
 
 .circle {
-  @apply before:content-[''] before:block before:border-[0.5px] before:rounded-full  before:right-0 before:top-0 before:absolute before:opacity-30 before:pointer-events-none before:-z-[1];
+  @apply before:pointer-events-none before:absolute before:top-0 before:right-0 before:-z-[1] before:block before:rounded-full before:border-[0.5px] before:opacity-30 before:content-[''];
 }
 
 .section-title {
-  @apply before:content-['...'] after:content-['...'] flex gap-1 font-secondary font-[600] text-xs;
+  @apply font-secondary flex gap-1 text-xs font-[600] before:content-['...'] after:content-['...'];
 }
 
 .section-title-secondary {
-  @apply relative font-secondary text-5xl w-full text-right py-2  font-[600] before:bg-font/10 before:content-[''] before:w-[200vw] before:h-0.5 before:block before:top-[100%] before:absolute before:-left-[50vw];
+  @apply font-secondary before:bg-font/10 relative w-full py-2 text-right text-5xl font-[600] before:absolute before:top-[100%] before:-left-[50vw] before:block before:h-0.5 before:w-[200vw] before:content-[''];
 }
