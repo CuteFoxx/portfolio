@@ -29,6 +29,15 @@
   }
 }
 
+textarea,
+input {
+  @apply border-primary border-b-1 py-2 outline-0;
+}
+
+button[type="submit"] {
+  @apply border-primary hover:bg-font hover:text-background w-fit min-w-40 cursor-pointer rounded-4xl border-1 p-2 px-4 transition-all duration-400;
+}
+
 html {
   @apply overflow-x-hidden scroll-smooth;
 }
@@ -49,7 +58,7 @@ body p strong {
 }
 
 .circle {
-  @apply before:pointer-events-none before:absolute before:top-0 before:right-0 before:-z-[1] before:block before:rounded-full before:border-[0.5px] before:opacity-30 before:content-[''];
+  @apply before:pointer-events-none before:absolute before:top-0 before:right-0 before:-z-[1] before:block before:rounded-full before:border-[0.5px] before:opacity-10 before:content-[''];
 }
 
 .section-title {

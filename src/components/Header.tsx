@@ -1,20 +1,57 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 
 function Header() {
   const [open, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const menuRef = useRef<HTMLUListElement>(null);
+  const hamburgerMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 100;
+      setIsScrolled((prev) => {
+        if (prev !== scrolled) {
+          return scrolled;
+        }
+        return prev;
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
+
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+
+      if (
+        (!menuRef.current?.contains(target) &&
+          target.tagName != "svg" &&
+          target.tagName != "path") ||
+        target.tagName == "A"
+      ) {
+        setIsOpen(false);
+      }
+    });
+  }, []);
 
   return (
     <div
-      className={`font-secondary bg-background circle sticky top-0 z-20 mb-12 flex items-center justify-between py-3 before:fixed before:-z-10 before:h-[20rem] before:w-[20rem] before:translate-x-[60%] before:-translate-y-1/2 after:absolute after:-left-6 after:-z-[1] after:h-full after:w-screen after:transition-all after:duration-500 md:py-6 md:text-2xl lg:mb-40 lg:py-12 xl:before:!-right-30 xl:before:-translate-y-[20%] ${
+      className={`font-secondary sticky top-0 z-20 mb-12 flex items-center justify-between py-3 before:absolute before:-left-[50vw] before:-z-10 before:h-full before:w-[200vw] before:content-[''] after:absolute after:-left-6 after:-z-[1] after:h-full after:w-screen after:transition-all after:duration-500 md:py-6 md:text-2xl lg:mb-40 lg:py-12 ${
         open ? "after:bg-background" : ""
-      }`}
+      } ${isScrolled ? "before:bg-background/99" : ""}`}
     >
       <h1>Alisa Polishchuk</h1>
       <nav>
         <ul
-          className={`bg-background pointer-events-none absolute top-[100%] flex w-screen flex-col items-center justify-center gap-2 p-8 opacity-0 transition-all duration-500 md:gap-4 lg:pointer-events-auto lg:static lg:w-full lg:flex-row lg:gap-12 lg:p-0 lg:opacity-100 ${
+          ref={menuRef}
+          className={`bg-background pointer-events-none absolute top-[100%] flex w-screen flex-col items-center justify-center gap-2 p-8 opacity-0 transition-all duration-500 md:gap-4 lg:pointer-events-auto lg:static lg:w-full lg:flex-row lg:gap-12 lg:bg-transparent lg:p-0 lg:opacity-100 ${
             open ? "!pointer-events-auto -left-6 opacity-[1]" : "-left-[100%]"
           }`}
         >
@@ -22,14 +59,15 @@ function Header() {
             <HeaderLink href="#about">About</HeaderLink>
           </li>
           <li>
-            <HeaderLink href="#">Projects</HeaderLink>
+            <HeaderLink href="#projects">Projects</HeaderLink>
           </li>
           <li>
-            <HeaderLink href="#">Contacts</HeaderLink>
+            <HeaderLink href="#contacts">Contacts</HeaderLink>
           </li>
         </ul>
       </nav>
       <div
+        ref={hamburgerMenuRef}
         className="block lg:hidden"
         onClick={() => setIsOpen((prev) => !prev)}
       >

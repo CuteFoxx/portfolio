@@ -3,7 +3,7 @@ import Experience from "./Experience";
 const Work = ({ className = "", ...rest }) => {
   return (
     <div className={`${className}`}>
-      <h2 className={`section-title-secondary `} {...rest}>
+      <h2 className={`section-title-secondary`} {...rest}>
         Work
       </h2>
       <div>

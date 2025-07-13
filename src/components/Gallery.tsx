@@ -10,9 +10,10 @@ const Gallery = ({
 }) => {
   return (
     <section className={className}>
-      {project.gallery.map((gallery: GalleryType) => {
+      {project.gallery.map((gallery: GalleryType, index) => {
         return (
           <LinkImage
+            key={index}
             href={project.projectLinks[0]}
             imgSrc={gallery.img}
             alt={gallery.alt}

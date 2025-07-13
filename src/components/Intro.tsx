@@ -7,32 +7,32 @@ const Intro = ({ className = "", ...rest }) => {
   return (
     <div
       id="intro"
-      className={`min-h-full relative lg:pb-20 overflow-hidden ${className}`}
+      className={`relative min-h-full lg:pb-20 ${className}`}
       {...rest}
     >
       <div>
         <div className="flex flex-col gap-2">
-          <div className="flex sm:justify-between gap-1">
+          <div className="flex gap-1 sm:justify-between">
             <Word>Full-stack</Word>
             <Link className="hidden lg:flex" href="#projects">
               Projects
             </Link>
           </div>
-          <div className="flex sm:justify-between gap-1">
+          <div className="flex gap-1 sm:justify-between">
             {/* TODO REPLACE  */}
             <Description className="hidden lg:block" />
-            <span className="ml-auto sm:ml-0  font-[500] text-5xl font-secondary md:text-6xl lg:text-8xl xl:text-9xl">
+            <span className="font-secondary ml-auto text-5xl font-[500] sm:ml-0 md:text-6xl lg:text-8xl xl:text-9xl">
               Developer
             </span>
           </div>
         </div>
-        <Description className="block lg:hidden mt-8" />
-        <Link className="flex lg:hidden mt-4" href="#projects">
+        <Description className="mt-8 block lg:hidden" />
+        <Link className="mt-4 flex lg:hidden" href="#projects">
           Projects
         </Link>
       </div>
 
-      <div className="mt-14 lg:mt-20 flex gap-4 lg:px-20">
+      <div className="mt-14 flex gap-4 lg:mt-20 lg:px-20">
         <SocialLink
           href="https://github.com/CuteFoxx"
           icon={<PiGithubLogoFill />}
@@ -54,7 +54,7 @@ export default Intro;
 
 const Word = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="font-[500] text-5xl font-secondary md:text-6xl lg:text-8xl xl:text-9xl">
+    <span className="font-secondary text-5xl font-[500] md:text-6xl lg:text-8xl xl:text-9xl">
       {children}
     </span>
   );
@@ -62,9 +62,9 @@ const Word = ({ children }: { children: React.ReactNode }) => {
 
 const Description = ({ className }: { className: string }) => {
   return (
-    <p className={`lg:max-w-120 lg:text-xl  text-primary ${className}`}>
+    <p className={`text-primary lg:max-w-120 lg:text-xl ${className}`}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <span className="italic text-font">
+      <span className="text-font italic">
         {" "}
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </span>

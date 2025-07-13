@@ -28,7 +28,10 @@ type ProjectProps = {
 
 const Project = ({ project, intent }: ProjectProps) => {
   return (
-    <section className="grid gap-12 lg:h-max lg:grid-cols-[2fr_5fr] lg:gap-24">
+    <section
+      key={project.id}
+      className="circle relative grid gap-12 before:h-[600px] before:w-[600px] before:translate-x-1/2 before:-translate-y-1/3 odd:[left:unset] even:before:!left-0 even:before:!-translate-x-2/3 lg:h-max lg:grid-cols-[2fr_5fr] lg:gap-24"
+    >
       <Gallery
         project={project}
         className={galleryVarians({ intent: intent })}
@@ -36,17 +39,20 @@ const Project = ({ project, intent }: ProjectProps) => {
       <div className="lg:-order-1">
         <h2 className="mb-4 text-lg capitalize">{project.name}</h2>
         <div className="mb-6 flex gap-4">
-          {project.techStack.map((item) => {
+          {project.techStack.map((item, index) => {
             return (
-              <span className="font-secondary border-primary/50 hover:text-background lg:text-md text-font cursor-pointer rounded-full border-1 p-2 px-3 text-sm transition-all duration-300 hover:bg-white">
+              <span
+                key={index}
+                className="font-secondary border-primary/50 hover:text-background lg:text-md text-font cursor-pointer rounded-full border-1 p-2 px-3 text-sm transition-all duration-300 hover:bg-white"
+              >
                 {item}
               </span>
             );
           })}
         </div>
-        <p className="text-primary mb-4 text-xs lg:mb-12 lg:text-[0.85rem]">
+        <div className="text-primary mb-4 text-xs lg:mb-12 lg:text-[0.85rem]">
           <Markdown>{project.description}</Markdown>
-        </p>
+        </div>
         <div className="[&>*:not(a)]:border-primary/50 group relative flex [&>*:not(a)]:rounded-full [&>*:not(a)]:border-1 [&>*:not(a)]:p-3">
           <a
             href={project.sourceCode}

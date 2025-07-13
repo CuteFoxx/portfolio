@@ -1,4 +1,5 @@
 export type ProjectType = {
+  id: number;
   name: string;
   projectLinks: string[];
   gallery: GalleryType[];
