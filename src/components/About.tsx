@@ -22,7 +22,7 @@ const About = ({ className = "", ...rest }) => {
             className="max-h-80 w-full object-cover select-none"
             draggable={false}
             loading="lazy"
-            src="src\assets\imgs\portrait.jpg"
+            src="/imgs/portrait.jpg"
           ></img>
         </div>
         <div className="mt-6 flex flex-col gap-4 lg:gap-6">

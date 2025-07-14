@@ -20,7 +20,7 @@ const Contacts = ({ className }: { className?: string }) => {
           >
             Linkedin
           </a>
-          <a className="font-bold" href="src\assets\cv.pdf" target="_blank">
+          <a className="font-bold" href="/cv.pdf" target="_blank">
             Resume
           </a>
         </div>
