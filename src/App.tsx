@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Intro
         className={
-          "circle relative max-h-[500px] flex-1 basis-[90vh] before:-z-10 before:h-[20rem] before:w-[20rem] before:translate-x-[125%] before:-translate-y-[125%] lg:max-h-[75vh] lg:basis-[81vh]"
+          "relative max-h-[500px] flex-1 basis-[90vh] lg:max-h-[75vh] lg:basis-[81vh]"
         }
       />
       <About className="!lg:scroll-m-80 !lg:scroll-pt-80 mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-60" />

@@ -6,9 +6,12 @@ import { motion, type MotionProps } from "framer-motion";
 
 const Intro = ({ className = "", ...rest }) => {
   return (
-    <div
+    <motion.div
       id="intro"
-      className={`relative min-h-full lg:pb-20 ${className}`}
+      initial={{ "--opacity": 0 }}
+      animate={{ "--opacity": 0.1 }}
+      transition={{ duration: 2 }}
+      className={`circle relative min-h-full before:-z-10 before:h-[20rem] before:w-[20rem] before:translate-x-[125%] before:-translate-y-[125%] lg:pb-20 ${className}`}
       {...rest}
     >
       <div>
@@ -72,7 +75,7 @@ const Intro = ({ className = "", ...rest }) => {
           Linkedin
         </SocialLink>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

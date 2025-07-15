@@ -1,25 +1,31 @@
 import type { HTMLAttributes } from "react";
+import { motion, type MotionProps } from "framer-motion";
 
-type TechStackProps = {
+type techStackProps = {
   title: string;
   children: React.ReactNode;
 } & HTMLAttributes<HTMLDivElement>;
+
+type TechStackProps = techStackProps &
+  MotionProps &
+  React.HTMLAttributes<HTMLAnchorElement>;
 
 const TechStack = ({ title, children, ...props }: TechStackProps) => {
   const { className, ...rest } = { ...props };
 
   return (
-    <div
-      className={`rounded-3xl overflow-hidden border-[0.5px] border-white/50 p-6 font-secondary hover:bg-white transition-all duration-500 group bg-background ${className}`}
-      {...rest}
-    >
-      <h2 className="text-lg mb-3 group-hover:text-background transition-all duration-500">
-        {title}
-      </h2>
-      <div className="text-sm flex flex-wrap [&>*]:flex [&>*]:transition-all  [&>*]:duration-500 [&>*]:not-last:after:content-['/'] [&>*]:not-last:after:block [&>*]:not-last:after:mx-2 group-hover:[&>*]:text-background">
-        {children}{" "}
+    <motion.div {...rest}>
+      <div
+        className={`font-secondary group bg-background overflow-hidden rounded-3xl border-[0.5px] border-white/50 p-6 transition-all duration-500 hover:bg-white ${className}`}
+      >
+        <h2 className="group-hover:text-background mb-3 text-lg transition-all duration-500">
+          {title}
+        </h2>
+        <div className="group-hover:[&>*]:text-background flex flex-wrap text-sm [&>*]:flex [&>*]:transition-all [&>*]:duration-500 [&>*]:not-last:after:mx-2 [&>*]:not-last:after:block [&>*]:not-last:after:content-['/']">
+          {children}{" "}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
