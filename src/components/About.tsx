@@ -25,8 +25,6 @@ const About = ({ className = "", ...rest }) => {
     }
   }, [animate, controls, isInView]);
 
-  console.log(isInView);
-
   return (
     <motion.div
       ref={scope}
