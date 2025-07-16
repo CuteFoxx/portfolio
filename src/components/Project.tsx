@@ -4,9 +4,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import Markdown from "react-markdown";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { motion, useAnimate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const galleryVarians = cva(
-  "relative [&>*]:max-h-[300px] [&>*]:lg:max-h-[500px]  [&>*]:flex flex flex-wrap gap-5 gallery",
+  "relative [&>*]:max-h-[300px] [&>*]:lg:max-h-[500px]  [&>*]:flex flex flex-wrap gap-5 gallery origin-right",
   {
     variants: {
       intent: {
@@ -27,18 +29,74 @@ type ProjectProps = {
 } & VariantProps<typeof galleryVarians>;
 
 const Project = ({ project, intent }: ProjectProps) => {
+  const [scope, animation] = useAnimate();
+  const isInView = useInView(scope, { margin: "-100px" });
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    if (isInView) {
+      animation([
+        [
+          galleryRef?.current ?? "",
+          { opacity: 1, x: 0 },
+          { duration: 1, delay: 0.15 },
+        ],
+        [".circle", { "--opacity": 1 }, { at: 0.25 }],
+      ]);
+
+      animation([
+        [
+          ".project-title",
+          { opacity: 1, y: 0 },
+          { duration: 1, ease: "backInOut" },
+        ],
+        [
+          ".stack",
+          { opacity: 1, x: 0 },
+          { duration: 0.65, at: "-0.4", ease: "backIn" },
+        ],
+        [
+          ".description",
+          { opacity: 1, x: 0 },
+          { duration: 0.65, at: "-0.4", ease: "backIn" },
+        ],
+        [
+          ".links",
+          { opacity: 1, x: 0 },
+          { duration: 0.65, at: "-0.4", ease: "backIn" },
+        ],
+      ]);
+    }
+  }, [animation, isInView]);
+
   return (
-    <section
+    <motion.section
+      ref={scope}
       key={project.id}
-      className="circle relative grid gap-12 before:h-[600px] before:w-[600px] before:translate-x-1/2 before:-translate-y-1/3 odd:[left:unset] even:before:!left-0 even:before:!-translate-x-2/3 lg:h-max lg:grid-cols-[2fr_5fr] lg:gap-24"
+      initial={{ "--opacity": 0 }}
+      whileInView={{ "--opacity": 0.1 }}
+      transition={{ duration: 2 }}
+      className="circle relative grid gap-12 before:h-[600px] before:w-[600px] before:translate-x-1/2 before:-translate-y-1/3 odd:[left:unset] even:before:!left-0 even:before:!-translate-x-2/3 lg:h-max lg:grid-cols-[2fr_5fr] lg:gap-24 even:lg:grid-cols-[5fr_2fr] even:[&>*:nth-child(1)]:!-order-2"
     >
       <Gallery
+        initial={{ opacity: 0, x: 15 }}
+        ref={galleryRef}
         project={project}
         className={galleryVarians({ intent: intent })}
       />
       <div className="lg:-order-1">
-        <h2 className="mb-4 text-lg capitalize">{project.name}</h2>
-        <div className="mb-6 flex gap-4">
+        <motion.h2 className="mb-4 overflow-hidden text-lg capitalize">
+          <motion.span
+            initial={{ opacity: 0.75, y: 100 }}
+            className="project-title inline-block"
+          >
+            {project.name}
+          </motion.span>
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, x: -15 }}
+          className="stack mb-6 flex gap-4"
+        >
           {project.techStack.map((item, index) => {
             return (
               <span
@@ -49,11 +107,17 @@ const Project = ({ project, intent }: ProjectProps) => {
               </span>
             );
           })}
-        </div>
-        <div className="text-primary mb-4 text-xs lg:mb-12 lg:text-[0.85rem]">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -15 }}
+          className="description text-primary mb-4 text-xs lg:mb-12 lg:text-[0.85rem]"
+        >
           <Markdown>{project.description}</Markdown>
-        </div>
-        <div className="[&>*:not(a)]:border-primary/50 group relative flex [&>*:not(a)]:rounded-full [&>*:not(a)]:border-1 [&>*:not(a)]:p-3">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -15 }}
+          className="links [&>*:not(a)]:border-primary/50 group relative flex [&>*:not(a)]:rounded-full [&>*:not(a)]:border-1 [&>*:not(a)]:p-3"
+        >
           <a
             href={project.sourceCode}
             aria-label="source code link"
@@ -67,9 +131,9 @@ const Project = ({ project, intent }: ProjectProps) => {
             size={48}
             className="bg-font text-background -ml-3"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
