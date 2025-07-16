@@ -85,7 +85,7 @@ function Header() {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeOut", duration: 0.7 }}
       >
-        Alisa Polishchuk
+        <a href="#">Alisa Polishchuk</a>
       </motion.h1>
       <nav ref={scope}>
         <ul

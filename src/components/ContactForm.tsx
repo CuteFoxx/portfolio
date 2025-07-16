@@ -1,6 +1,7 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion, type MotionProps } from "framer-motion";
 
 const schema = z.object({
   name: z.string("").min(3, "The name should be at least 3 characters long."),
@@ -11,7 +12,9 @@ const schema = z.object({
 });
 
 type formFields = z.infer<typeof schema>;
-const ContactForm = () => {
+const ContactForm = ({
+  ...rest
+}: MotionProps & React.HtmlHTMLAttributes<HTMLFormElement>) => {
   const {
     register,
     handleSubmit,
@@ -23,8 +26,14 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="mb-2 text-xl font-bold">Contact form</h2>
+    <motion.form
+      {...rest}
+      className="grid gap-4"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <h2 className="mb-2 text-xl font-bold lg:mb-4 lg:text-3xl">
+        Contact form
+      </h2>
 
       <div className="grid gap-1">
         <input type="text" placeholder="Name" {...register("name")} />
@@ -61,7 +70,7 @@ const ContactForm = () => {
       </div>
 
       <button type="submit">Send</button>
-    </form>
+    </motion.form>
   );
 };
 

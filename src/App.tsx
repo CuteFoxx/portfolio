@@ -16,7 +16,7 @@ function App() {
       />
       <About className="!lg:scroll-m-80 !lg:scroll-pt-80 mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-60" />
       <Work className="mb-20 lg:mb-40" />
-      <Projects className="!lg:scroll-m-40 !lg:scroll-pt-40 mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-40" />
+      <Projects className="mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-40 lg:!scroll-m-40 lg:!scroll-pt-40" />
       <Contacts />
     </div>
   );
