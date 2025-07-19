@@ -3,6 +3,7 @@ import Link from "./Link";
 import SocialLink from "./SocialLink";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { motion, type MotionProps } from "framer-motion";
+import Markdown from "react-markdown";
 
 const Intro = ({ className = "", ...rest }) => {
   return (
@@ -102,18 +103,18 @@ const Word = ({ children, className, ...rest }: WordProps) => {
 
 const Description = ({ className }: { className?: string }) => {
   return (
-    <motion.p
+    <motion.div
       initial={{ opacity: 0 }}
       transition={{ delay: 1.45, ease: "easeInOut", duration: 0.55 }}
       animate={{ opacity: 1 }}
-      className={`text-primary lg:max-w-120 lg:pr-12 lg:text-xl ${className}`}
+      className={`text-primary lg:max-w-180 lg:pr-12 lg:text-xl ${className}`}
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <span className="text-font italic">
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </span>
-      Vero nobis iure ipsum iusto, autem mollitia!
-    </motion.p>
+      <Markdown>
+        Passionate **full stack developer** building modern web experiences with
+        **Node.js, TypeScript, and React**. Always exploring creative ways to
+        enhance interfaces—especially through smooth animations. I love turning
+        ideas into clean, interactive, and efficient code.
+      </Markdown>
+    </motion.div>
   );
 };

@@ -60,13 +60,14 @@ const About = ({ className = "", ...rest }) => {
             initial={{ opacity: 0, scale: 0.98, x: 75 }}
             animate={controls}
             transition={{ duration: duration * 1.15 }}
-            className="mt-6 w-full overflow-hidden rounded-3xl grayscale-100 lg:order-2"
+            className="mt-6 w-full overflow-hidden rounded-3xl lg:order-2"
           >
             <motion.img
-              className="max-h-80 w-full origin-right object-cover select-none"
+              className="max-h-80 w-full origin-right object-cover select-none md:min-h-[500px]"
               draggable={false}
               loading="lazy"
               src="/imgs/portrait.jpg"
+              alt="Alisa Polischuck's photo"
             ></motion.img>
           </motion.div>
           <div className="mt-6 flex flex-col gap-4 lg:gap-6">

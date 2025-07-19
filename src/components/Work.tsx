@@ -14,7 +14,6 @@ const Work = ({ className = "", ...rest }) => {
     }
   }, [animate, controls, isInView]);
 
-  console.log(isInView);
   return (
     <motion.div ref={scope} className={`${className}`}>
       <motion.h2

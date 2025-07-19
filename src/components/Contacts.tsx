@@ -61,13 +61,13 @@ const Contacts = ({ className }: { className?: string }) => {
           >
             Linkedin
           </a>
-          <a
+          {/* <a
             className="font-bold hover:underline"
             href="/cv.pdf"
             target="_blank"
           >
             Resume
-          </a>
+          </a> */}
         </div>
 
         <ContactForm initial={{ opacity: 0, x: 100 }} id="contact-form" />

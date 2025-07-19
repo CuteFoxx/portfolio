@@ -11,10 +11,10 @@ function App() {
       <Header />
       <Intro
         className={
-          "relative max-h-[500px] flex-1 basis-[90vh] lg:max-h-[75vh] lg:basis-[81vh]"
+          "relative flex-1 basis-[90vh] lg:max-h-[75vh] lg:basis-[81vh]"
         }
       />
-      <About className="!lg:scroll-m-80 !lg:scroll-pt-80 mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-60" />
+      <About className="mt-12 mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-60 lg:!scroll-m-40 lg:!scroll-pt-40" />
       <Work className="mb-20 lg:mb-40" />
       <Projects className="mb-20 !scroll-m-20 !scroll-pt-20 lg:mb-40 lg:!scroll-m-40 lg:!scroll-pt-40" />
       <Contacts />

@@ -1,49 +1,54 @@
 [
   {
     "id": 1,
-    "name": "project1",
-    "projectLinks": [
-      "https://music.youtube.com/watch?v=A3pu7gSHiKI&si=7IRnFj44g6xqcyju"
+    "name": "Budgeting app",
+    "projectLinks": ["https://youtu.be/Eyp724_ENlg"],
+    "techStack": [
+      "TypeScript",
+      "React",
+      "Tailwind",
+      "Shadcn",
+      "PHP",
+      "MySQL",
+      "Symfony"
     ],
-    "techStack": ["TypeScript", "React", "NodeJS"],
-    "description": "**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Donec et diam quis lorem egestas ornare. Nunc in nibh sit amet nisi volutpat congue. Duis id eros sit amet dolor vestibulum vulputate at a enim. Donec nec laoreet libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-    "sourceCode": "https://github.com/",
+    "description": "A budgeting app built with **Symfony (PHP)** and **React (TypeScript, ShadCN)** featuring a user-friendly dashboard, secure login/registration, and full task control: add, edit, delete, or set repeating tasks to manage expenses efficiently.",
+    "sourceCode": "https://github.com/CuteFoxx/budget_app",
     "gallery": [
       {
-        "img": "https://images.unsplash.com/photo-1751335412320-14cbef56564e?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "image-1"
+        "img": "imgs/budgeting_app/preview-1.png",
+        "alt": "preview of budget app 1"
       },
       {
-        "img": "https://images.unsplash.com/photo-1743535363334-2841caa6130e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "image-2"
+        "img": "imgs/budgeting_app/preview-3.png",
+        "alt": "preview of budget app 2"
       },
       {
-        "img": "https://images.unsplash.com/photo-1734983235410-cbbc5f5fcdaf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD",
-        "alt": "image-3"
+        "img": "imgs/budgeting_app/preview-2.png",
+
+        "alt": "preview of budget app 3"
       }
     ]
   },
   {
     "id": 2,
-    "name": "project2",
-    "projectLinks": [
-      "https://music.youtube.com/watch?v=A3pu7gSHiKI&si=7IRnFj44g6xqcyju"
-    ],
-    "techStack": ["TypeScript", "React", "NodeJS"],
-    "description": "**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Donec et diam quis lorem egestas ornare. Nunc in nibh sit amet nisi volutpat congue. Duis id eros sit amet dolor vestibulum vulputate at a enim. Donec nec laoreet libero. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-    "sourceCode": "https://github.com/",
+    "name": "React ecommerce",
+    "projectLinks": ["https://react-ecommerce-sandy-beta.vercel.app/"],
+    "techStack": ["TypeScript", "React", "Tailwind", "Redux"],
+    "description": "A simple eCommerce shop built with **React, TypeScript**, and **Redux**. Users can browse products, add them to the cart, and place orders. **Clean design** and smooth experience make it easy to manage and extend for small to mid-sized online stores.",
+    "sourceCode": "https://github.com/CuteFoxx/react-ecommerce",
     "gallery": [
       {
-        "img": "https://images.unsplash.com/photo-1518915097488-7accba4ed445?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "image-1"
+        "img": "imgs/react_ecommerce/preview-1.png",
+        "alt": "preview of react ecommerce app 1"
       },
       {
-        "img": "https://images.unsplash.com/photo-1751647670943-74e2045c942a?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "image-2"
+        "img": "imgs/react_ecommerce/preview-2.png",
+        "alt": "preview of react ecommerce app 2"
       },
       {
-        "img": "https://images.unsplash.com/photo-1747227825543-5da2c9f03222?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "image-3"
+        "img": "imgs/react_ecommerce/preview-3.png",
+        "alt": "preview of react ecommerce app 3"
       }
     ]
   }
