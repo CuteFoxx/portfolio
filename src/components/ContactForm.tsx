@@ -3,7 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, type MotionProps } from "framer-motion";
 import Turnstile, { useTurnstile } from "react-turnstile";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const schema = z.object({
   name: z.string("").min(3, "The name should be at least 3 characters long."),
