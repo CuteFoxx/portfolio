@@ -26,16 +26,18 @@ const ContactForm = ({
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted },
-  } = useForm<formFields>({ resolver: zodResolver(schema) });
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<formFields>({ resolver: zodResolver(schema), mode: "onSubmit" });
 
   const onSubmit: SubmitHandler<formFields> = async (fields) => {
+    console.log("submit");
+    console.log(errors);
+
     if (!captchaIsValid) {
-      console.error("invalid captcha");
       return;
     }
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/form", {
+      const response = await fetch("/api/form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +63,7 @@ const ContactForm = ({
         Contact form
       </h2>
 
-      {!isSubmitted ? (
+      {!isSubmitSuccessful ? (
         <>
           <div className="grid gap-1">
             <input type="text" placeholder="Name" {...register("name")} />
@@ -104,7 +106,7 @@ const ContactForm = ({
             sitekey="0x4AAAAAABlruP0MK5Bytq6d"
             fixedSize={true}
             onVerify={(token) => {
-              fetch("http://127.0.0.1:8000/api/captcha", {
+              fetch("/api/captcha", {
                 method: "POST",
                 body: JSON.stringify({ token }),
               }).then((response) => {
