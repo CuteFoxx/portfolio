@@ -1,6 +1,38 @@
 [
   {
     "id": 1,
+    "name": "Kanban task manager",
+    "projectLinks": [
+      "https://frontend-production-32cd.up.railway.app/board/16"
+    ],
+    "techStack": [
+      "TypeScript",
+      "React",
+      "Redux",
+      "Tailwind",
+      "NestJs",
+      "SQLite"
+    ],
+    "description": "A Kanban-style task management app built with **React**, **Redux**, and **Tailwind CSS** on the frontend, and **NestJS** with **TypeORM** on the backend. It supports full CRUD operations on boards, columns, tasks, and subtasks, with drag-and-drop functionality for moving tasks between columns. The interface is fully responsive, working seamlessly on both desktop and mobile.",
+    "sourceCode": "https://github.com/CuteFoxx/Kanban-Task-manager",
+    "gallery": [
+      {
+        "img": "imgs/kanban_task_manager/preview-1.png",
+        "alt": "preview of task manager 1"
+      },
+      {
+        "img": "imgs/kanban_task_manager/preview-3.png",
+        "alt": "preview of task manager 2"
+      },
+      {
+        "img": "imgs/kanban_task_manager/preview-2.png",
+
+        "alt": "preview of task manager 3"
+      }
+    ]
+  },
+  {
+    "id": 2,
     "name": "Budgeting app",
     "projectLinks": ["https://youtu.be/Eyp724_ENlg"],
     "techStack": [
@@ -31,7 +63,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "React ecommerce",
     "projectLinks": ["https://react-ecommerce-sandy-beta.vercel.app/"],
     "techStack": ["TypeScript", "React", "Tailwind", "Redux"],

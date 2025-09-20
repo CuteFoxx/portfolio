@@ -12,7 +12,7 @@ const Intro = ({ className = "", ...rest }) => {
       initial={{ "--opacity": 0 }}
       animate={{ "--opacity": 0.1 }}
       transition={{ duration: 2 }}
-      className={`circle relative min-h-full before:-z-10 before:h-[20rem] before:w-[20rem] before:translate-x-[125%] before:-translate-y-[125%] lg:pb-20 ${className}`}
+      className={`circle relative min-h-full before:-z-10 before:h-[20rem] before:w-[20rem] before:translate-x-[125%] before:-translate-y-[125%] lg:pb-20 ${className} xl:mx-auto xl:max-w-[90rem]`}
       {...rest}
     >
       <div>
