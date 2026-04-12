@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Kanban task manager",
     "projectLinks": [
-      "https://frontend-production-32cd.up.railway.app/board/16"
+      "https://kanban.alisapolishchuk.com/"
     ],
     "techStack": [
       "TypeScript",
